@@ -1,0 +1,12 @@
+template:nth-child(){
+    border: 2px solid red;
+}
+img {
+    width: 250px;
+    height:250px;
+}
+main {
+    display: grid;
+    grid-template-columns: 260px 260px 260px ;
+    gap :15px;
+}
