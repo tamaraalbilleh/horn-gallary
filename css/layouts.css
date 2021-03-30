@@ -6,7 +6,7 @@ header {
     line-height: 100px;
 }
 
-select{
+#filter{
     float: right;
     padding: 20px;
     position: absolute;
