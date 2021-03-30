@@ -5,17 +5,20 @@ header {
     display: block;
     line-height: 100px;
 }
-
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 #filter{
     float: right;
-    padding: 20px;
+    
     position: absolute;
     top :20px;
     right :215px;
 }
 
 section {
-    float: left;
     width :260px;
     height: 420px;
     margin: 30px;
@@ -29,4 +32,9 @@ img {
 
 footer {
     clear: both;
+}
+div {
+    width: 100%;
+    display: flex;
+    justify-content: left;
 }
