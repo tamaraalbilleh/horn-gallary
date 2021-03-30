@@ -44,30 +44,14 @@ Card.prototype.renderCards = function (){
 
 
 // making the drop down list rendering function and invoking it //
-// let selection = function (){
-//   let keyArray= ['narwhal','rhino','unicorn','unilego','triceratops','markhor','mouflon','addax','chameleon','lizard'];
-
-//   for (let i = 0 ;i< keyArray.length;i++){
-//     let optionCloneElement =$('option').first().clone();
-//     $('select').append(optionCloneElement);
-//     optionCloneElement.val(keyArray[i]);
-//     optionCloneElement.text(keyArray[i]);
-//   }
-// };
-
-
 let selection = function () {
-
   console.log (keys);
-
-
   keys.forEach(item=>{
     if (! keyArray.includes (item)){
       keyArray.push (item);
     }
-
   });
-  console.log ('ko', keyArray);
+  console.log ('list', keyArray);
 
   keyArray.forEach(val=> {
     let optionCloneElement =$('option').first().clone();
