@@ -1,8 +1,8 @@
 'use strict';
 // variables //
 let all = [];
-
-
+let keys = [];
+let keyArray = [];
 // importing the data from page-1.json file //
 $.ajax ('./data/page-1.json').then (data =>{
   let dataArray = data;
@@ -11,6 +11,10 @@ $.ajax ('./data/page-1.json').then (data =>{
     card.renderCards();
   });
   $('section:nth-of-type(1)').remove(); // removing the template //
+
+
+
+  selection();
 });
 
 // constructor function //
@@ -21,6 +25,7 @@ function Card (title,img,description,key,horns){
   this.key = key;
   this.horns= horns;
   all.push (this);
+  keys.push (this.key);
 }
 // the prototype for rendering the default view with all the cards //
 Card.prototype.renderCards = function (){
@@ -39,18 +44,24 @@ Card.prototype.renderCards = function (){
 
 
 // making the drop down list rendering function and invoking it //
-let selection = function (){
-  let keyArray= ['narwhal','rhino','unicorn','unilego','triceratops','markhor','mouflon','addax','chameleon','lizard'];
+let selection = function () {
+  console.log (keys);
+  keys.forEach(item=>{
+    if (! keyArray.includes (item)){
+      keyArray.push (item);
+    }
+  });
+  console.log ('list', keyArray);
 
-  for (let i = 0 ;i< keyArray.length;i++){
+  keyArray.forEach(val=> {
     let optionCloneElement =$('option').first().clone();
     $('select').append(optionCloneElement);
-    optionCloneElement.val(keyArray[i]);
-    optionCloneElement.text(keyArray[i]);
-  }
+    optionCloneElement.val(val);
+    optionCloneElement.text(val);
+  });
+
 };
 
-selection();
 
 
 
